@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diabetes Classification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Diabetes Classification</h1>
+
+  <p>Welcome to my Diabetes Classification model. This model was trained using the Pima Indians Diabetes Database. It predicts whether a patient has diabetes or not based on four features: number of pregnancies, glucose level (0 to 199), BMI (0 to 67), and age. The inputs will be fed into a Decision Tree algorithm which will produce an output of either "Has Diabetes" or "Does not have Diabetes".</p>
+
+  <form action="{{ url_for('predict')}}" method="POST">
+    <label for="Pregnancies">Number of Pregnancies:</label>
+    <input type="number" name="Pregnancies" step="0.1">
+
+    <label for="Glucose">Glucose Level (0 to 199):</label>
+    <input type="number" name="Glucose" step="0.1">
+
+    <label for="BMI">BMI (0 to 67):</label>
+    <input type="number" name="BMI" step="0.1">
+
+    <label for="Age">Age:</label>
+    <input type="number" name="Age" step="0.1">
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <div class="result">My final prediction: {{ predict }}</div>
+</body>
+</html>
