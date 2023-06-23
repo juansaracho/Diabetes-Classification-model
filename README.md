@@ -9,4 +9,5 @@ This project aims to provide a Machine Learning model that can predict Diabetes 
 ## Installation and Usage
 
 Heroku link: https://ana680final.herokuapp.com/
+
 Docker Hub link: https://hub.docker.com/repository/docker/juansaracho/diabetes_model/general
